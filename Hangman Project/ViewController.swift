@@ -223,14 +223,14 @@ class ViewController: UIViewController {
         let alert = UIAlertController (title: "Woohoo!", message: "You saved me! Would you like to play again?", preferredStyle: .alert)
         let noBtn = UIAlertAction(title: "Exit", style: .default,handler: { (action) in
             //If gamer needs to not want to return back to the game, Alert closed and do nothing as per the project requirement.
-            self.dismiss(animated: true, completion: nil)
+            alert.dismiss(animated: true, completion: nil)
             self.performSegue(withIdentifier: "goToTitleScreen", sender: self)
         })
         let yesBtn = UIAlertAction(title: "Continue", style: .default, handler: { (action) in
             //If gamer needs to return back to the game, gameReset method is called.
             //Future development can be implemented here like do something to quit the game with showing proper statistics of the game or something else.
             self.gameReset()
-            self.dismiss(animated: true, completion: nil)
+            alert.dismiss(animated: true, completion: nil)
         })
         alert.addAction(noBtn)
         alert.addAction(yesBtn)
@@ -246,13 +246,13 @@ class ViewController: UIViewController {
         let alert = UIAlertController (title: "Uh oh", message: "The correct word was \(selectedWord). Would you like to try again?", preferredStyle: .alert)
         let noBtn = UIAlertAction(title: "Exit", style: .default,handler: { (action) in
             
-            self.dismiss(animated: true, completion: nil)
+            alert.dismiss(animated: true, completion: nil)
             self.performSegue(withIdentifier: "goToTitleScreen", sender: self)
         })
         let yesBtn = UIAlertAction(title: "Continue", style: .default, handler: { (action) in
             //If gamer needs to return back to the game, gameReset method is called.
             self.gameReset()
-            self.dismiss(animated: true, completion: nil)
+            alert.dismiss(animated: true, completion: nil)
         })
         alert.addAction(noBtn)
         alert.addAction(yesBtn)
